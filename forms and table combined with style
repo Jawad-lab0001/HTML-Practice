@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <body style="background-color: aqua;">
+         <form>
+                <label for="Department"> Department:</label>
+                <select id="Department" name="Department">
+                <option value="DHB">DHB</option>
+                <option value="TG">TG</option>
+                <option value="Garden mills">Garden mills</opiton>
+            
+                </select><br><br>
+            
+
+            <form action="#" method="post">
+                <label for="Fname">First name:</label><br>
+                <input type="text" id="Fname" name="Fname"><br>
+                <label for="Lname">Last name:</label><br>
+                <input type="text" id="Lname" name="Lname"><br>
+                <label for="Cname">Course name:</label><br>
+                <input type="text" id="Cname" name="Cname"><br>
+                
+            
+
+            <label for="Feedback">Feedback</label><br>
+            <textarea id="Feedback" name="Feedback" rows="5" cols="50"></textarea><br>
+            <input type="submit"value="Submit">
+            </form>
+
+
+             <head>
+        <title>Table pratice</title>
+        <style>
+        .wrapped-table {
+            float: left;
+            margin: 15px;
+
+            }
+
+            table{
+                border: 2px solid black;
+                width: 70%;
+                text-align: centre;
+                border-spacing: 10px;
+            }
+
+            th, td {
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            .colored-cell{
+                background-color: aqua;
+            }
+            .centered{
+                margin-left:auto;
+                margin-right:auto;
+            }
+
+        </style>
+
+    </head>
+    
+        <table class ="wrapped-table centered">
+            <tr>
+                <th>Student name </th>
+                <th>Student</th>
+                <th>Course name</th>
+                <th>Feedback</th>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                 <td></td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                 <td></td>
+            </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                 <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                 <td></td>
+            </tr>
+             
+         
+
+ </table>
+
+
+
+    </body>
+
+
+
+</html>
