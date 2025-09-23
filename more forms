@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>my portfolio</title>
+    </head>
+    <body style="background-color: blueviolet;">
+        <h1>Student Jawad Ahmed portfolio</h1>
+        <p><br>my name is jawad ahmed i live in bradford and attend i dont know either bolton or manchester university and study in the garden mills studyzone at bradford college</br></p1>
+            <img src="C:\Users\10623471\Downloads\Gym_cat_tom_lobby_sprite.jpg" alt="Jawad Ahmed" width="300">
+            <form>
+                <input type="checkbox" id="stupid" name="stupid" value="Yes">
+                <label for="stupid"> you are stupid </label><br>
+                <input type="checkbox" id="smart" name="smart" value="yes">
+                <label for="smart"> you are smart </label><br>  
+            </form>
+            <form action="#" method="post">
+                <label for="Fname">First name:</label><br>
+                <input type="text" id="Fname" name="Fname"><br>
+                <label for="Lname">Last name:</label><br>
+                <input type="text" id="Lname" name="Lname"><br>
+                <input type="submit"value="Submit">
+            </form>
+
+            <form>
+                <label for="Students"> Student names:</label>
+                <select id="Students" name="Students">
+                <option value="Jawad">Jawad</option>
+                <option value="Arshad">Arshad</option>
+                <option value="Raees">Raees</opiton>
+                <option value="T">T</opiton>
+                </select><br><br>
+            </form>
+                
