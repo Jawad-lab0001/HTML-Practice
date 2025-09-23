@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>Forms practise</head>
+<body>
+    <form>
+       <label for="classes">type of classes</label>
+       <select id="classes" name="classes">
+        <option value="Software engineering">Software engineering</option>
+        <option value="Networking">Networking</option>
+        <option value="Nurse">Nurse</option>
+      
+       </select> 
+    </form>
+    
+</body>
