@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Superhero List</title>
+    <style>
+        #list {
+            margin: 20px;
+        }
+        #new, #add-new {
+            margin-bottom: 10px;
+        }
+        #dynamic-list li {
+            background-color: aquamarine;
+            padding: 8px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="List">
+        <input type="text" id="new" placeholder="Enter the superhero name" />
+        <button id="add-new">Add new</button>
+        <button id="insertBefore">Insert before</button>
+        <button id="replaceItem">Replace item</button>
+        <button id="removeItem">Remove item</button>
+        <ul id="dynamic-list"></ul>
+    </div>
+
+    <script>
+        const list = document.getElementById("dynamic-list");
+        const input = document.getElementById("new");
+
+        // Add new event
+        document.getElementById("add-new").addEventListener("click", () => {
+            const value = input.value.trim();
+            if (!value) {
+                alert("Enter a superhero name");
+                return;
+            }
+            appendItem(value);
+            input.value = "";
+        });
+
+        // Insert before event
+        document.getElementById("insertBefore").addEventListener("click", () => {
+            const newText = input.value.trim();
+            if (!newText) {
+                alert("Enter the new superhero name in the input box");
+                return;
+            }
+            const beforeText = prompt("Enter the name of the superhero to insert before:");
+            if (!beforeText) return;
+
+            const success = insertBefore(newText, beforeText.trim());
+            if (!success) alert(`Superhero "${beforeText}" not found.`);
+            else input.value = "";
+        });
+
+        // Replace item event
+        document.getElementById("replaceItem").addEventListener("click", () => {
+            const newText = input.value.trim();
+            if (!newText) {
+                alert("Enter the new superhero name in the input box");
+                return;
+            }
+            const oldText = prompt("Enter the name of the superhero to replace:");
+            if (!oldText) return;
+
+            const success = replaceItem(oldText.trim(), newText);
+            if (!success) alert(`Superhero "${oldText}" not found.`);
+            else input.value = "";
+        });
+
+        // Remove item event
+        document.getElementById("removeItem").addEventListener("click", () => {
+            const text = prompt("Enter the name of the superhero to remove:");
+            if (!text) return;
+
+            const success = removeItem(text.trim());
+            if (!success) alert(`Superhero "${text}" not found.`);
+        });
+
+        // Helper functions
+        function createListItem(text) {
+            const li = document.createElement("li");
+            li.textContent = text;
+            return li;
+        }
+
+        function insertBefore(newText, beforeText) {
+            const newItem = createListItem(newText);
+            const existingItems = Array.from(list.children);
+            const beforeItem = existingItems.find(li => li.textContent === beforeText);
+            if (beforeItem) {
+                list.insertBefore(newItem, beforeItem);
+                return true;
+            }
+            return false;
+        }
+
+        function appendItem(text) {
+            const newItem = createListItem(text);
+            list.appendChild(newItem);
+        }
+
+        function replaceItem(oldText, newText) {
+            const items = Array.from(list.children);
+            const oldItem = items.find(li => li.textContent === oldText);
+            if (oldItem) {
+                const newItem = createListItem(newText);
+                list.replaceChild(newItem, oldItem);
+                return true;
+            }
+            return false;
+        }
+
+        function removeItem(text) {
+            const items = Array.from(list.children);
+            const itemToRemove = items.find(li => li.textContent === text);
+            if (itemToRemove) {
+                list.removeChild(itemToRemove);
+                return true;
+            }
+            return false;
+        }
+
+        // Starting list
+        appendItem("spider-man");
+        appendItem("superman");
+        appendItem("John CENA");
+    </script>
+</body>
+</html>
