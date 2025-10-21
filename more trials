@@ -1,0 +1,152 @@
+<!----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unordered list</title>
+</head>
+<body>
+    <ul>
+       <li>Batman</li>
+       <li>Superman</li>
+       <li>The Flash</li> 
+    </ul>
+     <ul>
+       <li>Rigby</li>
+       <li>Mordeci</li>
+       <li>Pops</li> 
+    </ul>
+     <ul>
+       <li>Spongebob</li>
+       <li>Patrick</li>
+       <li>Squidward</li> 
+    </ul>
+</body>
+</html>
+<!---->
+<!----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="List">
+        <input type="text" id="new" placeholder="Enter a superhero"/>
+        <button id="add-new-button">Add new</button>
+        <ul id="dynamic list">
+
+        </ul>
+#list-container {
+    margin: 20px;
+}
+#new-item-input, add-item {
+    margin-bottom: 10px;
+}
+#dynamic-list li {
+    background-color: aqua
+}
+    </div>
+    
+    
+</body>
+</html>
+<!---->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list {
+            margin: 20px;
+        }
+        #new, #add-new {
+            margin-bottom: 10;
+        }
+        #dynamic-list li{
+            background-color: aquamarine;
+            padding: 8px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div id="List">
+        <input type="text" id="new" placeholder="Enter the superhero name"/>
+        <button id="add-new">Add new</button>
+        <button id="insertBefore">insert before</button>
+        <button id="replaceItem">replace item</button>
+        <button id="removeItem">remove item</button>
+        <ul id="dynamic-list"></ul>
+    </div>
+    <script>
+        const list = document.getElementById("dynamic-list");
+        const input = document.getElementById("new");
+        const addButton = document.getElementById("add-new");
+        const addButton1 = document.getElementById("insertBefore");
+        const addButton2 = document.getElementById("replaceItem");
+        const addButton3 = document.getElementById("removeItem");
+        addButton.addEventListener("click",()=> {
+            const value = input.value.trim();
+            if (!value) {
+                alert("enter a superhero name");
+                return;
+            }
+            appendItem(value);
+            input.value="";
+        });
+        
+        function createListItem(text) {
+            const li = document.createElement("li");
+            li.textContent = text;
+            return li;
+        }
+        function insertBefore(newText, beforeText) {
+            const newItem = createListItem(newText);
+            const existingItems = Array.from(list.children);
+            const beforeItem = existingItems.find(li => li.textContent === oldText);
+            if (beforeItem) {
+                const newItem= createListItem(newText);
+                list.insertBefore(newText, beforeText);
+                return true;
+            }
+            return false;
+        }
+        function appendItem(text){
+            const newItem = createListItem(text);
+            list.appendChild(newItem);
+        }
+        function replaceItem(oldText, newText) {
+            const items = Array.from(list.children);
+            const oldItem = items.find(li => li.textContent===oldText);
+            if (oldItem) {
+                const newItems = createListItem(newText);
+                list.replaceChild(newItem, oldItem);
+                return true;
+            }
+            return false;
+        }
+        function removeItem(text){
+            const items = Array.from(list.children);
+            const itemToRemove = items.find(li.textContent===text);
+            if(itemToRemove){
+                list.removeChild(itemToRemove);
+                return true;
+            }
+            return false;
+
+        }
+       
+    </script>
+</body>
+</html>
